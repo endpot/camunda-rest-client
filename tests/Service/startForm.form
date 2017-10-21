@@ -1,0 +1,15 @@
+<form>
+
+  <label for="account">账号：</label>
+
+  <input type="text" id="account"
+         cam-variable-name="account"
+         cam-variable-type="String">
+
+  <label for="age">年龄：</label>
+
+  <input type="Integer" id="age"
+         cam-variable-name="age"
+         cam-variable-type="Integer">
+
+</form>

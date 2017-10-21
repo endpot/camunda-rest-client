@@ -1,0 +1,24 @@
+{
+    "name": "endpot/camunda-rest-client",
+    "description": "camunda rest client",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HunterXuan",
+            "email": "endpot@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Camunda\\": "src"
+        }
+    }
+}
