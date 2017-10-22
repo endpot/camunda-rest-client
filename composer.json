@@ -15,7 +15,6 @@
             "email": "endpot@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Camunda\\": "src"
