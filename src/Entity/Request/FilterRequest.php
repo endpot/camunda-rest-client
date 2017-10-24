@@ -2,28 +2,28 @@
 /**
  * Created by PhpStorm.
  * User: xuansw
- * Date: 2017/10/20
- * Time: 17:08
+ * Date: 2017/10/23
+ * Time: 10:00
  */
 
 namespace Camunda\Entity\Request;
 
-class CaseExecutionRequest extends BasicRequest
+class FilterRequest extends BasicRequest
 {
     protected $fields = [
-        'deserializeValue',
-        'value',
-        'type',
-        'valueInfo',
-        'data',
-        'valueType',
-        'modifications',
-        'deletions',
-        'caseExecutionId',
-        'caseInstanceId',
-        'businessKey',
-        'caseDefinitionId',
-        'caseDefinitionKey',
+        'filterId',
+        'resourceType',
+        'name',
+        'nameLike',
+        'owner',
+        'itemCount',
+        'sortBy',
+        'sortOrder',
+        'firstResult',
+        'maxResults',
+        'itemCount',
+        'query',
+        'properties',
         'activityId',
         'required',
         'repeatable',
