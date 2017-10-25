@@ -139,7 +139,7 @@ class BasicService
         $this->responseContents = $response->getBody()->getContents();
 
         if (in_array('application/json', $response->getHeader('Content-Type'))) {
-            $this->responseContents = json_decode($this->responseContents);
+            $this->responseContents = json_decode($this->responseContents, true);
         }
 
         return $this;
