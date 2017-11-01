@@ -39,7 +39,7 @@ class TaskService extends BasicService
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseContents();
     }
@@ -49,7 +49,7 @@ class TaskService extends BasicService
         $this->setRequestUrl('/task/' . $taskId . '/form')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
-            ->run(true);
+            ->run();
 
         return $this->getResponseContents();
     }
@@ -60,7 +60,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -71,7 +71,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -82,7 +82,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -93,7 +93,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -104,7 +104,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -115,7 +115,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -126,7 +126,7 @@ class TaskService extends BasicService
             ->setRequestMethod('POST')
             ->setRequestContentType('JSON')
             ->setRequestObject($taskRequest)
-            ->run(true);
+            ->run();
 
         return $this->getResponseCode() == 204 ? true : false;
     }
@@ -136,7 +136,7 @@ class TaskService extends BasicService
         $this->setRequestUrl('/task/' . $taskId . '/rendered-form')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
-            ->run(true);
+            ->run();
 
         return $this->getResponseContents();
     }
