@@ -87,11 +87,15 @@ class BasicService
         return $this->responseContents;
     }
 
-    public function run()
+    public function run($HAL = false)
     {
         $object = ($this->requestObject instanceof BasicRequest) ? $this->requestObject->getObject() : [];
         $body = [];
         $option = [];
+
+        if ($HAL) {
+            $option['headers'] = ['Accept' => 'application/hal+json'];
+        }
 
         if ($object) {
             if ($this->requestContentType == 'multipart') {
