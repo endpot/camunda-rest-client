@@ -19,7 +19,7 @@ class BasicService
     private $restApiUrl;
     private $requestUrl;
     private $requestMethod = 'GET';
-    private $requestContentType = 'QUERY';
+    private $requestContentType = 'query';
     private $requestObject;
 
     private $responseCode;
@@ -94,7 +94,7 @@ class BasicService
         $option = [];
 
         if ($HAL) {
-            $option['headers'] = ['Accept' => 'application/hal+json'];
+            $option['headers']['Accept'] = 'application/hal+json';
         }
 
         if ($object) {
@@ -130,7 +130,12 @@ class BasicService
             }
         }
 
-        $option[$this->requestContentType] = $body;
+        // when json body is empty, add content-type
+        if (empty($body) && $this->requestContentType == 'json') {
+            $option['headers']['Content-Type'] = 'application/json';
+        } else {
+            $option[$this->requestContentType] = $body;
+        }
 
         $client = new Client();
         try {
