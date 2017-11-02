@@ -14,7 +14,7 @@ class VariableCollection
 
     public function addVariable($name, $value, $type = '', $valueInfo = [], $local = false)
     {
-        if ($name && $value) {
+        if ($name && !empty($value)) {
             $this->variables[$name] = [];
             $this->variables[$name]['value'] = $value;
 
