@@ -8,9 +8,10 @@
 
 namespace Camunda\Service\History;
 
+use Camunda\Service\BasicService;
 use Camunda\Entity\Request\ProcessInstanceRequest;
 
-class ProcessInstanceService
+class ProcessInstanceService extends BasicService
 {
     public function getListCount(ProcessInstanceRequest $processInstanceRequest = null)
     {
