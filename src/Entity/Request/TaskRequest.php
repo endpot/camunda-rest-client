@@ -95,6 +95,8 @@ class TaskRequest extends BasicRequest
         'sortOrder',
         'firstResult',
         'maxResults',
-        'userId'
+        'userId',
+        'groupId',
+        'type'
     ];
 }
