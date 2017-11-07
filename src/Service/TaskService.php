@@ -12,6 +12,38 @@ use Camunda\Entity\Request\TaskRequest;
 
 class TaskService extends BasicService
 {
+    public function getIdentityLinks($taskId)
+    {
+        $this->setRequestUrl('/task/' . $taskId . '/identity-links')
+            ->setRequestMethod('GET')
+            ->setRequestContentType('QUERY')
+            ->run();
+
+        return $this->getResponseContents();
+    }
+
+    public function addIdentityLink($taskId, $taskRequest = null)
+    {
+        $this->setRequestUrl('/task/' . $taskId . '/identity-links')
+            ->setRequestMethod('POST')
+            ->setRequestContentType('JSON')
+            ->setRequestObject($taskRequest)
+            ->run();
+
+        return $this->getResponseCode() == 204 ? true : false;
+    }
+
+    public function deleteIdentityLink($taskId, $taskRequest = null)
+    {
+        $this->setRequestUrl('/task/' . $taskId . '/identity-links/delete')
+            ->setRequestMethod('POST')
+            ->setRequestContentType('JSON')
+            ->setRequestObject($taskRequest)
+            ->run();
+
+        return $this->getResponseCode() == 204 ? true : false;
+    }
+
     public function getById($taskId)
     {
         $this->setRequestUrl('/task/' . $taskId)
