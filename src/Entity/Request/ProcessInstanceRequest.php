@@ -11,7 +11,8 @@ namespace Camunda\Entity\Request;
 class ProcessInstanceRequest extends BasicRequest
 {
     protected $fields = [
-        'data',
-        'deserializeValue'
+        'skipCustomListeners',
+        'skipIoMappings',
+        'instructions'
     ];
 }
