@@ -12,11 +12,12 @@ use Camunda\Entity\Request\TaskRequest;
 
 class TaskService extends BasicService
 {
-    public function getIdentityLinks($taskId)
+    public function getIdentityLinks($taskId, $taskRequest = null)
     {
         $this->setRequestUrl('/task/' . $taskId . '/identity-links')
             ->setRequestMethod('GET')
             ->setRequestContentType('QUERY')
+            ->setRequestObject($taskRequest)
             ->run();
 
         return $this->getResponseContents();
