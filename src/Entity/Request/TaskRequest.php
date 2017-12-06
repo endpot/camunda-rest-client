@@ -97,6 +97,7 @@ class TaskRequest extends BasicRequest
         'maxResults',
         'userId',
         'groupId',
-        'type'
+        'type',
+        'variables'
     ];
 }
