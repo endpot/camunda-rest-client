@@ -14,44 +14,108 @@ use Camunda\Helper\FileCollection;
 use Camunda\Helper\VariableCollection;
 use Camunda\Entity\Request\BasicRequest;
 
+/**
+ * Class BasicService
+ * @package Camunda\Service
+ */
 class BasicService
 {
+    /**
+     * @var string url of camunda rest engine
+     */
     private $restApiUrl;
+
+    /**
+     * @var string url of specific operation for specific resource
+     */
+
     private $requestUrl;
+
+    /**
+     * @var string request method (GET/POST/PUT/DELETE/OPTIONS/...)
+     */
     private $requestMethod = 'GET';
+
+    /**
+     * @var string indicates whether the parameters are appended in url or as json body or form/multipart (query/json/multipart)
+     */
     private $requestContentType = 'query';
+
+    /**
+     * @var BasicRequest request entity that contains necessary properties
+     */
     private $requestObject;
 
+    /**
+     * @var int response code
+     */
     private $responseCode;
+
+    /**
+     * @var mixed response contents (string or object)
+     */
     private $responseContents;
 
+    /**
+     * BasicService constructor.
+     *
+     * @param string $restApiUrl url of camunda rest engine
+     */
     public function __construct($restApiUrl = '')
     {
         $this->restApiUrl = rtrim(trim($restApiUrl), '/');
     }
 
+    /**
+     * set request url.
+     *
+     * @param $requestUrl
+     * @return $this
+     */
     public function setRequestUrl($requestUrl)
     {
         $this->requestUrl = $requestUrl;
         return $this;
     }
 
+    /**
+     * get request url.
+     *
+     * @return mixed
+     */
     public function getRequestUrl()
     {
         return $this->requestUrl;
     }
 
+    /**
+     * set request method.
+     *
+     * @param string $requestMethod
+     * @return $this
+     */
     public function setRequestMethod($requestMethod)
     {
         $this->requestMethod = strtoupper($requestMethod);
         return $this;
     }
 
+    /**
+     * get request method.
+     *
+     * @return string
+     */
     public function getRequestMethod()
     {
         return $this->requestMethod;
     }
 
+    /**
+     * set request content type.
+     *
+     * @param string $requestContentType (query/json/multipart)
+     * @return $this
+     */
     public function setRequestContentType($requestContentType)
     {
         $requestContentType = strtolower($requestContentType);
@@ -61,38 +125,71 @@ class BasicService
         return $this;
     }
 
+    /**
+     * get request content type.
+     *
+     * @return string
+     */
     public function getRequestContentType()
     {
         return $this->requestContentType;
     }
 
+    /**
+     * set request object.
+     *
+     * @param BasicRequest $requestObject
+     * @return $this
+     */
     public function setRequestObject($requestObject)
     {
         $this->requestObject = $requestObject;
         return $this;
     }
 
+    /**
+     * get request object.
+     *
+     * @return BasicRequest
+     */
     public function getRequestObject()
     {
         return $this->requestObject;
     }
 
+    /**
+     * get response code.
+     *
+     * @return int response code
+     */
     public function getResponseCode()
     {
         return $this->responseCode;
     }
 
+    /**
+     * get response contents..
+     *
+     * @return mixed
+     */
     public function getResponseContents()
     {
         return $this->responseContents;
     }
 
+    /**
+     * run this service and get response from camunda engine.
+     *
+     * @param bool $HAL whether use HAL or not
+     * @return $this
+     */
     public function run($HAL = false)
     {
         $object = ($this->requestObject instanceof BasicRequest) ? $this->requestObject->getObject() : [];
         $body = [];
         $option = [];
 
+        // if HAL, add header
         if ($HAL) {
             $option['headers']['Accept'] = 'application/hal+json';
         }
@@ -154,6 +251,11 @@ class BasicService
         return $this;
     }
 
+    /**
+     * reset service settings.
+     *
+     * @return $this
+     */
     public function reset()
     {
         $this->requestUrl = '';
