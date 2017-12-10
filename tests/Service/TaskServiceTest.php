@@ -23,4 +23,13 @@ class TaskServiceTest extends \PHPUnit_Framework_TestCase
 
         echo $taskService->complete($taskId, $taskRequest);
     }
+
+    public function testGetCommentList()
+    {
+        $taskService = new TaskService(self::CAMUNDA_REST_HOST);
+
+        $taskId = 'e1a2d7a6-dce0-11e7-901d-005056c00008';
+
+        var_dump($taskService->getCommentList($taskId));
+    }
 }

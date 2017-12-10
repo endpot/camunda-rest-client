@@ -12,6 +12,37 @@ use Camunda\Entity\Request\TaskRequest;
 
 class TaskService extends BasicService
 {
+    public function getCommentList($taskId)
+    {
+        $this->setRequestUrl('/task/' . $taskId . '/comment')
+            ->setRequestMethod('GET')
+            ->setRequestContentType('QUERY')
+            ->run();
+
+        return $this->getResponseContents();
+    }
+
+    public function getComment($taskId, $commentId)
+    {
+        $this->setRequestUrl('/task/' . $taskId . '/comment/' . $commentId)
+            ->setRequestMethod('GET')
+            ->setRequestContentType('QUERY')
+            ->run();
+
+        return $this->getResponseContents();
+    }
+
+    public function createComment($taskId, $taskRequest = null)
+    {
+        $this->setRequestUrl('/task/' . $taskId . '/comment/create')
+            ->setRequestMethod('POST')
+            ->setRequestContentType('JSON')
+            ->setRequestObject($taskRequest)
+            ->run();
+
+        return $this->getResponseContents();
+    }
+
     public function getIdentityLinks($taskId, $taskRequest = null)
     {
         $this->setRequestUrl('/task/' . $taskId . '/identity-links')

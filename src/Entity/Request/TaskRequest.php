@@ -98,6 +98,7 @@ class TaskRequest extends BasicRequest
         'userId',
         'groupId',
         'type',
-        'variables'
+        'variables',
+        'message'
     ];
 }
