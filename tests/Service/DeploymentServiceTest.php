@@ -47,12 +47,12 @@ class DeploymentServiceTest extends \PHPUnit_Framework_TestCase
         $files = new FileCollection();
 
         $files->addFile('power35', file_get_contents('./testProcess.bpmn'), 'testProcess.bpmn');
-        $files->addFile('start', file_get_contents("./startForm.form"), 'startForm.form');
+        //$files->addFile('start', file_get_contents("./startForm.form"), 'startForm.form');
 
         $deploymentRequest = new DeploymentRequest();
         $deploymentRequest->set('deployment-name', '测试')
             ->set('files', $files);
-        //var_dump($deploymentService->create($deploymentRequest));
+        var_dump($deploymentService->create($deploymentRequest));
     }
 
     public function testDelete()
