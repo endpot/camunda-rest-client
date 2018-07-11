@@ -13,6 +13,7 @@ use GuzzleHttp\Exception\RequestException;
 use Camunda\Helper\FileCollection;
 use Camunda\Helper\VariableCollection;
 use Camunda\Entity\Request\BasicRequest;
+use GuzzleHttp\Psr7\Response;
 
 /**
  * Class BasicService
@@ -241,11 +242,16 @@ class BasicService
             $response = $requestException->getResponse();
         }
 
-        $this->responseCode = $response->getStatusCode();
-        $this->responseContents = $response->getBody()->getContents();
+        if ($response instanceof Response) {
+            $this->responseCode = $response->getStatusCode();
+            $this->responseContents = $response->getBody()->getContents();
 
-        if (in_array('application/json', $response->getHeader('Content-Type')) || in_array('application/hal+json', $response->getHeader('Content-Type'))) {
-            $this->responseContents = json_decode($this->responseContents, false);
+            if (in_array('application/json', $response->getHeader('Content-Type')) || in_array('application/hal+json', $response->getHeader('Content-Type'))) {
+                $this->responseContents = json_decode($this->responseContents, false);
+            }
+        } else {
+            $this->responseCode = '';
+            $this->responseContents = '';
         }
 
         return $this;
