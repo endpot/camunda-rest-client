@@ -13,6 +13,9 @@ class ProcessInstanceRequest extends BasicRequest
     protected $fields = [
         'skipCustomListeners',
         'skipIoMappings',
-        'instructions'
+        'instructions',
+        'processInstanceIds',
+        'processInstanceQuery',
+        'deleteReason'
     ];
 }
