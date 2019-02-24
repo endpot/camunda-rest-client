@@ -130,4 +130,15 @@ class ExternalTaskService extends BasicService
 
         return $this->getResponseCode() == 204 ? true : false;
     }
+
+    public function extendLock($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
+    {
+        $this->setRequestUrl('/external-task/' . $externalTaskId . '/extendLock')
+            ->setRequestMethod('POST')
+            ->setRequestContentType('JSON')
+            ->setRequestObject($externalTaskRequest)
+            ->run();
+
+        return $this->getResponseCode() == 204 ? true : false;
+    }
 }

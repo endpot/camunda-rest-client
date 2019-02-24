@@ -45,6 +45,7 @@ class ExternalTaskRequest extends BasicRequest
         'retries',
         'retryTimeout',
         'priority',
+        'newDuration',
         'externalTaskIds',
         'externalTaskQuery'
     ];
