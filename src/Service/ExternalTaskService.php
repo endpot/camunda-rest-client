@@ -100,7 +100,7 @@ class ExternalTaskService extends BasicService
 
     public function setPriority($externalTaskId, ExternalTaskRequest $externalTaskRequest = null)
     {
-        $this->setRequestUrl('/external-task/' . $externalTaskId . '/unlock')
+        $this->setRequestUrl('/external-task/' . $externalTaskId . '/priority')
             ->setRequestMethod('PUT')
             ->setRequestContentType('JSON')
             ->setRequestObject($externalTaskRequest)
