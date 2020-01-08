@@ -51,6 +51,7 @@ class ProcessInstanceRequest extends BasicRequest
         'instructions',
         'processInstanceIds',
         'processInstanceQuery',
-        'deleteReason'
+        'deleteReason',
+        'deserializeValues'
     ];
 }
