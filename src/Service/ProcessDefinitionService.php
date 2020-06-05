@@ -30,7 +30,7 @@ class ProcessDefinitionService extends BasicService
         $tenantId = '',
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/statistics';
 
@@ -55,7 +55,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getDiagramByKey($processDefinitionKey, $tenantId = '')
     {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/diagram';
 
@@ -85,7 +85,7 @@ class ProcessDefinitionService extends BasicService
         $tenantId = '',
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/form-variables';
 
@@ -132,7 +132,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getRenderedStartFormByKey($processDefinitionKey, $tenantId = '')
     {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/rendered-form';
 
@@ -156,7 +156,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getStartFormKeyByKey($processDefinitionKey, $tenantId = '')
     {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/startForm';
 
@@ -191,7 +191,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getXMLByKey($processDefinitionKey, $tenantId = '')
     {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/xml';
 
@@ -215,7 +215,7 @@ class ProcessDefinitionService extends BasicService
 
     public function getByKey($processDefinitionKey, $tenantId = '')
     {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
 
         $this->setRequestUrl($url)
@@ -244,7 +244,7 @@ class ProcessDefinitionService extends BasicService
         $tenantId = '',
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/start';
 
@@ -275,7 +275,7 @@ class ProcessDefinitionService extends BasicService
         $tenantId = '',
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/submit-form';
 
@@ -306,7 +306,7 @@ class ProcessDefinitionService extends BasicService
         $tenantId = '',
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/suspended';
 
@@ -337,7 +337,7 @@ class ProcessDefinitionService extends BasicService
         $tenantId = '',
         ProcessDefinitionRequest $processDefinitionRequest = null
     ) {
-        $url = '/process-definition/' . $processDefinitionKey;
+        $url = '/process-definition/key/' . $processDefinitionKey;
         $url = $tenantId ? ($url . '/tenant-id/' . $tenantId) : $url;
         $url = $url . '/history-time-to-live';
 
