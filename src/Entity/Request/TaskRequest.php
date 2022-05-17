@@ -95,6 +95,7 @@ class TaskRequest extends BasicRequest
         'parentTaskId',
         'sortBy',
         'sortOrder',
+        'sorting',
         'firstResult',
         'maxResults',
         'userId',
