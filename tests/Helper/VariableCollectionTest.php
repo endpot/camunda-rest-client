@@ -8,7 +8,7 @@
 
 use Camunda\Helper\VariableCollection;
 
-class VariableCollectionTest extends PHPUnit_Framework_TestCase
+class VariableCollectionTest extends \PHPUnit\Framework\TestCase
 {
     public function testAddVariable()
     {

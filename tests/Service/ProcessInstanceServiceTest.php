@@ -10,8 +10,9 @@ namespace Camunda\Service;
 
 
 use Camunda\Entity\Request\ProcessInstanceRequest;
+use PHPUnit\Framework\TestCase;
 
-class ProcessInstanceServiceTest extends \PHPUnit_Framework_TestCase
+class ProcessInstanceServiceTest extends TestCase
 {
     public function testGetList()
     {

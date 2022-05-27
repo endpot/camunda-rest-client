@@ -10,8 +10,9 @@ namespace Camunda\Service;
 
 use Camunda\Entity\Request\DeploymentRequest;
 use Camunda\Helper\FileCollection;
+use PHPUnit\Framework\TestCase;
 
-class DeploymentServiceTest extends \PHPUnit_Framework_TestCase
+class DeploymentServiceTest extends TestCase
 {
     public function testGetList()
     {
@@ -46,7 +47,7 @@ class DeploymentServiceTest extends \PHPUnit_Framework_TestCase
 
         $files = new FileCollection();
 
-        $files->addFile('power35', file_get_contents('./testProcess.bpmn'), 'testProcess.bpmn');
+        $files->addFile('power35', file_get_contents(__DIR__.'/testProcess.bpmn'), 'testProcess.bpmn');
         //$files->addFile('start', file_get_contents("./startForm.form"), 'startForm.form');
 
         $deploymentRequest = new DeploymentRequest();

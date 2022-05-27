@@ -7,8 +7,9 @@
  */
 
 use Camunda\Helper\FileCollection;
+use PHPUnit\Framework\TestCase;
 
-class FileCollectionTest extends PHPUnit_Framework_TestCase
+class FileCollectionTest extends TestCase
 {
     public function testAddFile()
     {

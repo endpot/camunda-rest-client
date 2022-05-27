@@ -9,7 +9,9 @@
 namespace Camunda\Entity\Request;
 
 
-class DeploymentRequestTest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class DeploymentRequestTest extends TestCase
 {
     public function testSet()
     {
