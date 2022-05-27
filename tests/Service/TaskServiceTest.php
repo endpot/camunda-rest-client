@@ -9,8 +9,9 @@
 namespace Camunda\Service;
 
 use Camunda\Entity\Request\TaskRequest;
+use PHPUnit\Framework\TestCase;
 
-class TaskServiceTest extends \PHPUnit_Framework_TestCase
+class TaskServiceTest extends TestCase
 {
     const CAMUNDA_REST_HOST = 'http://localhost:8080/engine-rest';
 

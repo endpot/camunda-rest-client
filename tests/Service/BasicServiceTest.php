@@ -8,8 +8,9 @@
 
 use Camunda\Service\BasicService;
 use Camunda\Entity\Request\BasicRequest;
+use PHPUnit\Framework\TestCase;
 
-class BasicServiceTest extends PHPUnit_Framework_TestCase
+class BasicServiceTest extends TestCase
 {
     public function testSet()
     {
